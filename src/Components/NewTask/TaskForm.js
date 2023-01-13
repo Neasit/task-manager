@@ -41,11 +41,11 @@ function TaskForm(props) {
           </div>
           <div className='new-task__control'>
             <label>State</label>
-            <input
-              type='text'
-              value={enteredState}
-              onChange={stateChangeHandler}
-            />
+            <select value={enteredState} onChange={stateChangeHandler}>
+              <option value='Scheduled'>Scheduled</option>
+              <option value='In process'>In process</option>
+              <option value='Done'>Done</option>
+            </select>
           </div>
         </div>
         <div className='new-task__actions'>

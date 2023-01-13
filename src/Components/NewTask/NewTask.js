@@ -23,19 +23,19 @@ function NewTask(props) {
        setIsEditing(false);
     };
 
+    let content = <button onClick={startEditingHandler}>Add New Task</button>;
+    if(isEditing) {
+        content = <TaskForm
+        onSaveData={saveDataHandler}
+        onCancel={stopEditingHandler}
+      />;
+    }
+
 
     return (
         <div className='new-task'>
-        {!isEditing && (
-          <button onClick={startEditingHandler}>Add New Task</button>
-        )}
-        {isEditing && (
-          <TaskForm
-            onSaveData={saveDataHandler}
-            onCancel={stopEditingHandler}
-          />
-        )}
-      </div>
+            {content}
+        </div>
     );
 }
 
